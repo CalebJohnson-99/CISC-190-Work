@@ -1,6 +1,6 @@
 # Assignment 1
 
-```Java
+```java
 HelloJava.java
 public class HelloJava {
 public static void main(String[] args) {
