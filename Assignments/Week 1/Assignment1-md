@@ -1,0 +1,98 @@
+# Assignment 1
+
+## Part 1
+```java
+public class HelloJava {
+
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+```
+
+## Part 2
+```java
+public class HelloJava {
+
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+        System.out.println("I am learning Java programming.");
+        System.out.println("Practice makes programming easier.");
+    }
+}
+```
+
+## Part 3
+```java
+public class CourseIntroduction {
+    public static void main(String[] args) {
+        System.out.println("Name: Caleb Johnson");
+        System.out.println("Course: Java Programming");
+        System.out.println("Goal: I want to learn and better understand how a computer thinks and communicates.");
+    }
+}
+```
+
+# Part 4
+```java
+              // Class name
+public class CourseIntroduction
+// Main method    
+{public static void main(String[] args) {
+    //Java statements
+    System.out.println("Name: Caleb Johnson");
+    System.out.println("Course: Java Programming");
+    System.out.println("Goal: I want to learn and better understand how a computer thinks and communicates.");
+    }
+}
+```
+
+# Part 5
+```java
+//part 1
+public class CourseIntroduction
+{public static void main(String[] args) {
+    System.out.println("string");
+    System.out.println("literal");
+    System.out.println(":)");
+    }
+}
+```
+
+```java
+//part 2
+public class CourseIntroduction
+{public static void main(String[] args) {
+    System.out.println("string");
+    System.out.println("literal");
+    System.out.println(":)");
+    System.out.println("number 4");
+    }
+}
+```
+
+```java
+//part 3
+public class CourseIntroduction
+{public static void main(String[] args) {
+    System.out.println("number 4");
+    System.out.println("string");
+    System.out.println("literal");
+    System.out.println(":)");
+
+    }
+}
+```
+
+```java
+//part 4
+public class CourseIntroduction
+{public static void main(String[] args) {
+    System.out.println("number 4");
+    System.out.println("string");
+    System.out.println("literal");
+    System.out.println();
+
+    }
+}
+```
