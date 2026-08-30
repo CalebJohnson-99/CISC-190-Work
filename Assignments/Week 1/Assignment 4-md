@@ -1,0 +1,74 @@
+# Assignment 4
+
+```java
+import java.util.Scanner;
+
+public class TripCostAnalyzer {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        final int MINUTES_PER_HOUR = 60;
+
+        System.out.print("Enter trip distance in miles");
+        double distance = input.nextDouble();
+
+        System.out.print("Enter vehicle miles per gallon");
+        double milesPerGallon = input.nextDouble();
+
+        System.out.print("Enter fuel price per gallon");
+        double pricePerGallon = input.nextDouble();
+
+        System.out.print("Enter average driving speed");
+        double averageSpeed = input.nextDouble();
+
+        System.out.print("Enter number of travelers");
+        int numberOfTravelers = input.nextInt();
+
+        System.out.print("Enter fixed parking or toll cost: ");
+        double additionalCost = input.nextDouble();
+
+        double gallonsNeeded = distance / milesPerGallon;
+
+        double fuelCost = gallonsNeeded * pricePerGallon;
+
+        double travelHours = distance / averageSpeed;
+
+        int wholeHours = (int) travelHours;
+
+        double fractionalHour = travelHours - wholeHours;
+
+        int remainingMinutes = (int) (fractionalHour * MINUTES_PER_HOUR);
+
+        double costPerTraveler = fuelCost / numberOfTravelers;
+
+        double totalTripCost = fuelCost + additionalCost;
+
+        int totalMinutes = 335;
+
+        int hours = totalMinutes / MINUTES_PER_HOUR;
+        int remainingTime = totalMinutes % MINUTES_PER_HOUR;
+
+        System.out.println("\n--- Results ---");
+        System.out.println("Gallons needed: " + gallonsNeeded);
+        System.out.println("Fuel cost: " + fuelCost);
+        System.out.println("Travel time: " + travelHours + " hours");
+        System.out.println("Estimated driving time: " + wholeHours + " hours and " + remainingMinutes + " minutes");
+        System.out.println("Fuel cost per traveler: " + costPerTraveler);
+        System.out.println("Total trip cost: " + totalTripCost);
+        System.out.println(hours + " hours and " + remainingTime + " minutes");
+    }
+}
+```
+## Part 12
+The output is going to be 4 since it is using integers and the decimol will be cut off
+1. Since distance and speed have int infornt of them java does integer division and removes the decimol
+2. Only one of the variables needs to be changed to double
+3.
+int distance = 350;
+int speed = 80;
+
+double travelTime = (double) distance / speed;
+
+System.out.println(travelTime);
