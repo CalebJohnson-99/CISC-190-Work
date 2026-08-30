@@ -1,0 +1,87 @@
+# Assignment 3
+
+## Part 1
+``java
+public class SyntaxPractice {
+
+    public static void main(String[] args) {
+        System.out.println("Learning Java");
+        System.out.println("Finding errors is an important skill");
+    }
+}
+```
+1. 2 errors a missing ; and a missing "
+2. The ; error
+3. The " error
+4. In this case the compiler message pointed directly at the cause, but I imagine it can make mistakes sometimes.
+
+## Part 2
+```java
+public class StudentMessage {
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to the course!");
+        System.out.println("Practice Java every week.");
+    }
+}
+```
+## Part 3
+
+1. The compiler accepted the program
+2. the error happened when running the program
+3. The output caused the problem when it divided by zero
+4. Because the code is writen correctly, but the math is impossible.
+
+```java
+public class RuntimePractice {
+
+    public static void main(String[] args) {
+        int number = 10;
+        int divisor = 2;
+
+        System.out.println(number / divisor);
+    }
+}
+```
+## part 4
+```java
+public class TemperaturePractice {
+
+    public static void main(String[] args) {
+        double celsius = 35;
+        double fahrenheit = (9.0 / 5.0) * celsius + 32;
+
+        System.out.println("Celsius: " + celsius);
+        System.out.println("Fahrenheit: " + fahrenheit);
+    }
+}
+```
+
+The (9 / 5) had 67.0 F
+The (9.0 / 5.0) had 95.0 F
+This happened because with integers java removes the decimal point so 1.8 became 1
+floating-point keeps the decimal point and thats why there is sucha drastic diffrence.
+
+## Part 5
+A. syntax error
+B. logic error
+C. runtime error
+D. syntax error
+E. logic error
+##Part 6
+```java
+public class StudentAverage {
+
+    public static void main(String[] args) {
+
+        String studentName = "Jordan";
+        double score1 = 80;
+        double score2 = 90;
+
+        double average = (score1 + score2) / 2;
+
+        System.out.println("Student: " + studentName);
+        System.out.println("Average: " + average);
+    }
+}
+```
