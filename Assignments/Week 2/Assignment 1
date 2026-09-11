@@ -1,0 +1,137 @@
+# Week 2 Assignment 1
+
+```java
+import java.util.Scanner;
+
+public class CourseRegistrationAdvisor {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Placement score (0-100)");
+        int score = input.nextInt();
+
+        if (score >= 0 && score <= 100) {
+            System.out.println("Valid score continue.");
+        } else {
+            System.out.println("Invalid placement score.");
+        }
+        if (score >= 0 && score <= 100) {
+
+            String level;
+
+            if (score >= 90) {
+                level = "Advanced";
+            } else if (score >= 75) {
+                level = "Ready";
+            } else if (score >= 60) {
+                level = "Developing";
+            } else {
+                level = "Needs Preparation";
+            }
+            System.out.println("Preparation Level: " + level);
+
+        }
+        System.out.print("Prerequisite complete? (true/false)");
+        boolean prereq = input.nextBoolean();
+
+        if (prereq == false) {
+            System.out.println("Complete the prerequisite course first.");
+        } else {
+            if (score < 75) {
+                System.out.println("Additional preparation is recommended.");
+            }
+        }
+
+
+        System.out.print("Program type:\n" +
+                "1 - Computer Science\n" +
+                "2 - Data Science\n" +
+                "3 - Information Systems\n" +
+                "4 - Other");
+        int programType = input.nextInt();
+
+        System.out.print("Completed college units:");
+        int completedUnits = input.nextInt();
+
+
+        System.out.println("----- Course Registration Advisor -----");
+        System.out.println("Placement Score: " + score);
+        System.out.println("Prerequisite completed: " + prereq);
+        if (score >= 75 && prereq == true) {
+            System.out.println("Registration status: Eligible");
+        } else {
+            System.out.println("Registration status: Advisor review required");
+        }
+        switch (programType) {
+
+            case 1:
+                System.out.println("Computer Science pathway");
+                break;
+
+            case 2:
+                System.out.println("Data Science pathway");
+                break;
+
+            case 3:
+                System.out.println("Information Systems pathway");
+                break;
+
+            case 4:
+                System.out.println("General elective pathway");
+                break;
+
+            default:
+                System.out.println("Invalid program type");
+        }
+        String studentStatus =
+                (completedUnits < 12) ? "New Student" : "Continuing Student";
+
+        System.out.println("Studnet Status: " + studentStatus);
+
+        boolean hasPriority = (prereq && completedUnits >= 30 && score >= 75) || (prereq && completedUnits >= 60);
+
+        if (hasPriority) {
+            System.out.println("Early registration priority");
+        }
+    }
+}
+
+```
+
+## Part 11
+
+1. The score with display D
+2. Since the priority is set backwards.
+3.
+```java
+double score = 95;
+
+if (score >= 90) {
+    System.out.println("A");
+}
+else if (score >= 80) {
+    System.out.println("B");
+}
+else if (score >= 70) {
+    System.out.println("C");
+}
+else if (score >= 60) {
+    System.out.println("D");
+}
+
+## Part 12
+
+1. Yes
+2. There is an extra semicolon at the end of the if statement
+3. It doesn't cause a compiler error so the computer will still try and run the code
+
+```java
+
+int units = 6;
+
+if (units >= 12) {
+
+System.out.println("Continuing Student");
+}
