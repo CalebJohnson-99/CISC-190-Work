@@ -1,0 +1,295 @@
+# Assignment 2
+
+## Part 1-8
+```java
+import java.util.Scanner;
+
+public class ScoreAnalyzer {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int validScoresCount = 0;
+        double totalValidScores = 0.0;
+        double highestScore = 0.0;
+        double lowestScore = 0.0;
+        int passingScoresCount = 0;
+        int belowSixtyCount = 0;
+
+        System.out.print("Enter a score from 0 to 100 (-1 to finish): ");
+        double score = input.nextDouble();
+
+        while (score != -1) {
+
+            if (score >= 0 && score <= 100) {
+
+                validScoresCount++;
+                totalValidScores += score;
+
+                if (score > highestScore) {
+                    highestScore = score;
+                }
+                if (score < lowestScore) {
+                    lowestScore = score;
+                }
+                if (score >= 60) {
+                    passingScoresCount++;
+                }
+                else {
+                    belowSixtyCount++;
+                }
+            }
+            else {
+                System.out.println("Invalid score. Value ignored.");
+            }
+
+            System.out.print("Enter a score from 0 to 100 (-1 to finish): ");
+            score = input.nextDouble();
+        }
+        System.out.println("----- Score Summary -----");
+
+        if (validScoresCount > 0) {
+            double averageScore = totalValidScores / validScoresCount;
+
+            System.out.println("Valid scores: " + validScoresCount);
+            System.out.printf("Average: ", + averageScore);
+            System.out.printf("Highest: ", + highestScore);
+            System.out.printf("Lowest: ", + lowestScore);
+            System.out.println("Passing scores: " + passingScoresCount);
+            System.out.println("Below 60: " + belowSixtyCount);
+        }
+    }
+}
+```
+
+## Part 9
+```java
+import java.util.Scanner;
+
+public class ScoreAnalyzerDoWhile {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int validScoresCount = 0;
+        double totalValidScores = 0.0;
+        double highestScore = 0.0;
+        double lowestScore = 0.0;
+        int passingScoresCount = 0;
+        int belowSixtyCount = 0;
+
+        System.out.print("Enter a score from 0 to 100 (-1 to finish): ");
+        double score;
+
+        do {
+            System.out.print("Enter a score from 0 to 100 (-1 to finish): ");
+            score = input.nextDouble();
+
+            if (score != -1) {
+                if (score >= 0 && score <= 100) {
+
+                    validScoresCount++;
+                    totalValidScores += score;
+
+                    if (validScoresCount == 1) {
+                        highestScore = score;
+                        lowestScore = score;
+                    } 
+                    else {
+                        if (score > highestScore) {
+                            highestScore = score;
+                        }
+                        if (score < lowestScore) {
+                            lowestScore = score;
+                        }
+                    }
+                    if (score >= 60) {
+                        passingScoresCount++;
+                    } 
+                    else {
+                        belowSixtyCount++;
+                    }
+                }
+                else {
+                    System.out.println("Invalid score. Value ignored.");
+                }
+            }
+        } while (score != -1);
+
+        System.out.println("----- Score Summary -----");
+
+        if (validScoresCount > 0) {
+            double averageScore = totalValidScores / validScoresCount;
+
+            System.out.println("Valid scores: " + validScoresCount);
+            System.out.printf("Average: ", + averageScore);
+            System.out.printf("Highest: ", + highestScore);
+            System.out.printf("Lowest: ", + lowestScore);
+            System.out.println("Passing scores: " + passingScoresCount);
+            System.out.println("Below 60: " + belowSixtyCount);
+        }
+    }
+}
+```
+
+## Part 10
+```java
+import java.util.Scanner;
+
+public class FixedScoreAnalyzer {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int validScoresCount = 0;
+        double totalValidScores = 0.0;
+        double highestScore = 0.0;
+        double lowestScore = 0.0;
+        int passingScoresCount = 0;
+        int belowSixtyCount = 0;
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Enter score #" + i + " (0 to 100): ");
+            double score = input.nextDouble();
+
+            if (score >= 0 && score <= 100) {
+
+                    validScoresCount++;
+                    totalValidScores += score;
+
+                    if (validScoresCount == 1) {
+                        highestScore = score;
+                        lowestScore = score;
+                    }
+                    else {
+                        if (score > highestScore) {
+                            highestScore = score;
+                        }
+                        if (score < lowestScore) {
+                            lowestScore = score;
+                        }
+                    }
+                    if (score >= 60) {
+                        passingScoresCount++;
+                    }
+                    else {
+                        belowSixtyCount++;
+                    }
+                }
+            else {
+                    System.out.println("Invalid score. Value ignored.");
+                }
+            }
+
+        System.out.println("----- Score Summary -----");
+
+        if (validScoresCount > 0) {
+            double averageScore = totalValidScores / validScoresCount;
+
+            System.out.println("Valid scores: " + validScoresCount);
+            System.out.printf("Average: ", + averageScore);
+            System.out.printf("Highest: ", + highestScore);
+            System.out.printf("Lowest: ", + lowestScore);
+            System.out.println("Passing scores: " + passingScoresCount);
+            System.out.println("Below 60: " + belowSixtyCount);
+        }
+    }
+}
+```
+## Part 11
+package ScorePattern;
+
+public class ScorePattern {
+
+    public static void main(String[] args) {
+
+        for(int row = 1; row <=5;row++) {
+
+            for (int col = 1; col <= row; col++) {
+                System.out.print(col + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+## Part 12
+```java
+package ScorePattern;
+
+public class ScorePattern {
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 100; i++) {
+
+            if (i > 20 && i % 4 == 0 && i % 7 == 0) {
+                System.out.println("The first number: " + i);
+                
+            break;
+            }
+        }
+    }
+}
+```
+## Part 13
+```java
+package ScorePattern;
+
+public class ScorePattern {
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 20; i++) {
+
+            if (i % 3 == 0) {
+                continue;
+            }
+            System.out.print(i + " ");
+        }
+        System.out.println("press enter to exit");
+    }
+}
+```
+## Part 14
+
+1. count is set to 1 and 1 is always < 5
+2. the update statement that increases the count
+3.
+```java
+int count = 1;
+
+while (count <= 5) {
+    System.out.println(count);
+    count++;
+}
+```
+
+## Part 15
+1. the last number shown is 9
+2. since it is set a i < 10, i can only be less than 10. If it was i <= 10 then it would be 10.
+3.
+```java
+for (int i = 1; i <= 10; i++) {
+    System.out.println(i);
+}
+```
+
+## Part 16
+1. The first semicolon shouldn't be there
+2. it only executes once since the semicolon prevents the next line from interacting.
+3.
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println("Java");
+}
+```
+
+## Part 17
+1. for
+2. while
+3. do while
+4. for
