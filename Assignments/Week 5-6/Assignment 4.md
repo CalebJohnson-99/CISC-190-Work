@@ -139,4 +139,102 @@ public class GridValidator {
 }
 ```
 
-## Part 12-
+## Part 12
+```java
+public class ClosestPointAnalyzer {
+
+    public static void main(String[] args) {
+        double[][] points = {
+                {-1, 3},
+                {-1, -1},
+                {1, 1},
+                {2, 0.5},
+                {2, -1},
+                {3, 3},
+                {4, 2},
+                {4, -0.5}
+        };
+
+        double minDistance = Double.MAX_VALUE;
+        int point1Index = -1;
+        int point2Index = -1;
+
+        for (int i = 0; i < points.length; i++) {
+            for (int j = i + 1; j < points.length; j++) {
+                double currentDistance = distance(points[i], points[j]);
+
+                if (currentDistance < minDistance) {
+                    minDistance = currentDistance;
+                    point1Index = i;
+                    point2Index = j;
+                }
+            }
+        }
+
+        System.out.println("--- Closest Point ---");
+        System.out.printf("Point 1: (%s, %s)\n", points[point1Index][0], points[point1Index][1]);
+        System.out.printf("Point 2: (%s, %s)\n", points[point2Index][0], points[point2Index][1]);
+        System.out.printf("Minimum Distance: %.2f\n", minDistance);
+    }
+
+    public static double distance(double[] p1, double[] p2) {
+        double deltaX = p2[0] - p1[0];
+        double deltaY = p2[1] - p1[1];
+        return Math.sqrt((deltaX * deltaX) + (deltaY * deltaY));
+    }
+}
+```
+
+## Part 13-14
+```java
+public class ThreeDimensionalArrayExtension {
+
+    public static void main(String[] args) {
+        double[][][] scores = {
+                // Student 1
+                {
+                        {80.0, 75.0}, // Exam 1
+                        {90.0, 70.0}, // Exam 2
+                        {75.0, 89.0}  // Exam 3
+                },
+                // Student 2
+                {
+                        {60.0, 65.0}, // Exam 1
+                        {85.0, 95.0}, // Exam 2
+                        {80.0, 85.0}  // Exam 3
+                },
+                // Student 3
+                {
+                        {75.0, 75.0}, // Exam 1
+                        {80.0, 80.0}, // Exam 2
+                        {65.0, 75.0}  // Exam 3
+                },
+                // Student 4
+                {
+                        {70.0, 85.0}, // Exam 1
+                        {90.0, 85.0}, // Exam 2
+                        {70.0, 65.0}  // Exam 3
+                }
+        };
+
+        System.out.println("--- Student Total Score ---");
+
+        for (int student = 0; student < scores.length; student++) {
+            // Modified: Call the refactored method instead of nested loops here
+            double totalScore = studentTotal(scores, student);
+            System.out.printf("Total Score for Student %d: %.2f\n", (student + 1), totalScore);
+        }
+    }
+
+    public static double studentTotal(double[][][] scores, int student) {
+        double total = 0.0;
+
+        for (int exam = 0; exam < scores[student].length; exam++) {
+            for (int component = 0; component < scores[student][exam].length; component++) {
+                total += scores[student][exam][component];
+            }
+        }
+
+        return total;
+    }
+```
